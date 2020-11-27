@@ -9,6 +9,8 @@ global with sharing class AccountManager {
         Account result = [SELECT ID, Name, (SELECT ID, Name FROM Contacts)
                         FROM Account
                         WHERE Id = :accountId];
+
+        System.debug(result);
                
         return result;
         
